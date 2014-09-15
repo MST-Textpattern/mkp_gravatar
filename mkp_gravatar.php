@@ -20,7 +20,7 @@
  
 		$url = $http.'www.gravatar.com/avatar/';
 		$url .= $email;
-		$url .= 's='.$size;
+		$url .= '?s='.$size;
 		$url .= '&d='.$default;
 		$url .= '&r='.$rating;
 		
