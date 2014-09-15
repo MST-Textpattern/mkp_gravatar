@@ -1,0 +1,152 @@
+<h1>mkp_gravatar</h1>
+
+	<p>This tag returns an imagetag or an url with the gravatar for the email address of the current comment or any given email address.</p>
+
+	<h2>Links</h2>
+
+	<ul>
+		<li><a href="https://github.com/michaelkpate/mkp_gravatar" rel="nofollow">Github Code Repository</a> (more current)</li>
+		<li><a href="" >Download current version</a></li>
+	</ul>
+
+	<h2>mkp_gravatar</h2>
+
+	<p>Just use &lt;txp:mkp_gravatar /&gt; where ever you need a gravatar to be displayed. If you put this tag into a comment form the gravatar will be constructed using the email address given by the current comment. If you put this tag anywhere else (where glx_gravatar has no access to a comment email address) you can supply an email address by the attribute email to create the accompanying gravatar.</p>
+
+	<h3>Attributes</h3>
+
+	<h4>size (default: 80)</h4>
+
+	<p>1 to 512 &#8211; defines the size of the resulting gravatar, if ommited it will be 80px. All gravatars are squared.</p>
+
+	<h4>rating (default: g)</h4>
+
+	<p>defines the rating for the gravatar.</p>
+
+	<ul>
+		<li>g: suitable for display on all websites with any audience type.</li>
+		<li>pg: may contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.</li>
+		<li>r: may contain such things as harsh profanity, intense violence, nudity, or hard drug use.</li>
+		<li>x: may contain hardcore sexual imagery or extremely disturbing violence.</li>
+	</ul>
+
+	<h4>default (default: gravatar-logo)</h4>
+
+	<p>define which image(s) to display when no email address is available. If this attribute is missing gravatar.com&#8217;s white G on blue ground will be displayed. If you supply the url of an image here it will be used. Further it is possible to use gravatar.com&#8217;s integraton icons based on the submitted email address: </p>
+
+	<ul>
+		<li>404: do not load any image if none is associated with the email hash, instead return an <span class="caps">HTTP</span> 404 (File Not Found) response</li>
+		<li>mm: (mystery-man) a simple, cartoon-style silhouetted outline of a person (does not vary by email hash)</li>
+		<li>identicon: a geometric pattern based on an email hash</li>
+		<li>monsterid: a generated &#8216;monster&#8217; with different colors, faces, etc</li>
+		<li>wavatar: generated faces with differing features and backgrounds</li>
+		<li>retro: awesome generated, 8-bit arcade-style pixelated faces|</li>
+	</ul>
+
+	<h4>class (default: gravatar)</h4>
+
+	<p>content of the class-attribute of the image tag.</p>
+
+	<h4>alt (default: empty)</h4>
+
+	<p>content of the alt-attribute of the image tag.</p>
+
+	<h4>id (default: false)</h4>
+
+	<p>adds an id attribute to the image tag.</p>
+
+	<h4>disable (default: not set)</h4>
+
+	<p>disable the creation of the gravatar (returns nothing &#8211; useful if you just want to disable them for a moment)</p>
+
+	<h4>format (default: image)</h4>
+
+	<p>url &#8211; returns the url of the gravatar<br />
+image &#8211; returns the imagetag of the gravatar</p>
+
+	<h4>fileextension (default: false)</h4>
+
+	<p>if the image should have an file extension set this to true to add an .jpg at the end of the filename of the image. Don&#8217;t use this option unless you really need a file extension in the gravatar <span class="caps">URL</span>.</p>
+
+	<h4>email (default: empty/email address of current commentator)</h4>
+
+	<p>Used inside a comment form the plugin will choose the current commenters email address. If you use this tag outside of the comment forms this attribute is needed to give glx_gravatar the email address to be encoded. Every email can be gravatar encoded. If you want glx_gravatar to encode the address of the articles author you can use <code>&lt;txp:gho_author_email/&gt;</code> which is added in this plugin.</p>
+
+	<h2>gho_author_email</h2>
+
+	<p>Returns the author of the current article.</p>
+
+	<h2>Examples</h2>
+
+	<p><code>&lt;txp:glx_gravatar /&gt;</code><br />
+<code>&lt;txp:glx_gravatar size="60" default="http://www.example.com/images/gravatar.png" class="gravatar" /&gt;</code></p>
+
+	<p>used in the form comments it will show the gravatar of the current commentator</p>
+
+	<p><code>&lt;txp:glx_gravatar email="address</code>example.com&#8221; /&gt;@</p>
+
+	<p>shows the gravatar for address@example.com.</p>
+
+	<p><code>&lt;txp:glx_gravatar email='&lt;txp:gho_author_email/&gt;'/&gt;</code></p>
+
+	<p>Shows the gravatar for the author of the current article.</p>
+
+	<h3>Todo</h3>
+
+	<ul>
+		<li>F: gravatar profiles (hovercards, @see http://en.gravatar.com/site/implement/profiles/)</li>
+	</ul>
+
+	<h3>History</h3>
+
+	<p>2011-03-13 2011.1</p>
+
+	<ul>
+		<li>C: they say, we should trim, so we trim (@see http://en.gravatar.com/site/implement/hash/)</li>
+		<li>C: implementation of new attributes secure, forcedefault</li>
+		<li>C: code review</li>
+		<li>D: more documentation</li>
+	</ul>
+
+	<p>2009-07-03 2009.3</p>
+
+	<ul>
+		<li>B: lowercased email addresses as this is the way they are saved at gravatar.com</li>
+	</ul>
+
+	<p>2009-04-27 2009.2</p>
+
+	<ul>
+		<li>D: fixed the example for gho_author_email</li>
+		<li>B: created <span class="caps">URL</span> was not <span class="caps">XHTML</span> compliant (&amp;amp; instead of &amp; now)</li>
+	</ul>
+
+	<p>2009-04-23 2009.1</p>
+
+	<ul>
+		<li>F: included only current features of gravatar</li>
+		<li>D: extended documentation</li>
+		<li>C: code review</li>
+	</ul>
+
+	<p>2008-06-15 v.2008.1</p>
+
+	<ul>
+		<li>F: Attribut email for use outside of the comment-form</li>
+	</ul>
+
+	<p>2007-06-22 v.2007.1</p>
+
+	<ul>
+		<li>C: new release for textpattern 4.0.4 (without cache)</li>
+	</ul>
+
+	<p>Legend:</p>
+
+	<ul>
+		<li>B: Bugfix</li>
+		<li>C: Code</li>
+		<li>D: Documentation</li>
+		<li>F: Feature</li>
+		<li>I: Internationalization</li>
+	</ul>
