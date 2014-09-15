@@ -1,6 +1,6 @@
 h1. mkp_gravatar
 
-This tag returns an imagetag or an url with the gravatar for the email address of the current comment or any given email address.
+This tag returns an image tag or an url with the gravatar for the email address of the current comment or any given email address.
 
 h2. Acknowledgements
 
@@ -9,7 +9,7 @@ Previously, there have been two other Gravatar plugins for Textpattern but both 
 h2. Links
 
 * "Github Code Repository":https://github.com/michaelkpate/mkp_gravatar
-* "Download":https://github.com/michaelkpate/mkp_gravatar
+* "Download":https://raw.githubusercontent.com/michaelkpate/mkp_gravatar/master/mkp_gravatar.txt
 
 h2. mkp_gravatar
 
@@ -50,7 +50,7 @@ h4. image (default: 1)
 * 1: returns the image tag of the gravatar
 * 0: returns the url of the gravatar
 
-h4. class (default: gravatar)
+h4. class (default: empty)
 
 content of the class-attribute of the image tag.
 
