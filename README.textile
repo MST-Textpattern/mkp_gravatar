@@ -60,17 +60,17 @@ content of the alt-attribute of the image tag.
 
 h2. Examples
 
-bc. &lt;txp:glx_gravatar /&gt;
+bc. <txp:glx_gravatar />;
 
-bc. &lt;txp:glx_gravatar size="60" default="http://www.example.com/images/gravatar.png" class="gravatar" /&gt;
+bc. <txp:glx_gravatar size="60" default="http://www.example.com/images/gravatar.png" class="gravatar" />;
 
 used in the form comments it will show the gravatar of the current commentator
 
-bc. &lt;txp:glx_gravatar email="address</code>example.com&#8221; /&gt;@
+bc. <txp:glx_gravatar email="address example.com&#8221; />
 
 shows the gravatar for address@example.com.
 
-bc. &lt;txp:glx_gravatar email='&lt;txp:gho_author_email/&gt;'/&gt;
+bc. <txp:glx_gravatar email='<txp:gho_author_email/>'/>
 
 Shows the gravatar for the author of the current article.
 
