@@ -66,7 +66,7 @@ bc. <txp:glx_gravatar size="60" default="http://www.example.com/images/gravatar.
 
 used in the form comments it will show the gravatar of the current commentator
 
-bc. <txp:glx_gravatar email="address example.com&#8221; />
+bc. <txp:glx_gravatar email="address@example.com"; />
 
 shows the gravatar for address@example.com.
 
