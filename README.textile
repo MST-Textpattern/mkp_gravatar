@@ -1,10 +1,12 @@
 h1. mkp_gravatar
 
-This tag returns an image tag or an url with the gravatar for the email address of the current comment or any given email address.
+This tag returns an image tag or an URL with the Gravatar for the email address of the current comment or any given email address.
+
+From the Gravatar Site: An "avatar" is an image that represents you online—a little picture that appears next to your name when you interact with websites. A Gravatar is a Globally Recognized Avatar. You upload it and create your profile just once, and then when you participate in any Gravatar-enabled site, your Gravatar image will automatically follow you there.
 
 h2. Acknowledgements
 
-Previously, there have been two other Gravatar plugins for Textpattern but both are currently in orphan status. I started this one from scratch using "PHP Image Requests":https://en.gravatar.com/site/implement/images/php/ from the Gravatar Developer Resources. But I also looked at glx_gravatar for implementation ideas (and the format of this help document).
+Previously, there have been two other Gravatar plugins for Textpattern but both are currently in orphan status. I started this one from scratch using "PHP Image Requests":https://en.gravatar.com/site/implement/images/php/ from the Gravatar Developer Resources as a Guide. I also looked at the code of glx_gravatar for implementation ideas (and the format of this help document).
 
 h2. Links
 
@@ -13,21 +15,30 @@ h2. Links
 
 h2. mkp_gravatar
 
-Just use &lt;txp:mkp_gravatar /&gt; where ever you need a gravatar to be displayed. If you put this tag into a comment form the gravatar will be constructed using the email address given by the current comment. If you put this tag anywhere else (where mkp_gravatar has no access to a comment email address) you can supply an email address by the attribute email to create the accompanying gravatar.</p>
+Just use &lt;txp:mkp_gravatar /&gt; where ever you need a Gravatar to be displayed. If you put this tag into a comment form the Gravatar will be constructed using the email address given by the current comment. If you put this tag anywhere else (where mkp_gravatar has no access to a comment email address) you can supply an email address by the attribute email to create the accompanying Gravatar.</p>
 
 h3. Attributes
 
-h4. email (default: empty/email address of current commentator)</h4>
+h4. email (default: empty/email address of current commentator)
 
-Used inside a comment form the plugin will choose the current commenters email address. If you use this tag outside of the comment forms this attribute is needed to give glx_gravatar the email address to be encoded. Every email can be gravatar encoded.
+Used inside a comment form the plugin will choose the current commenter's email address. If you use this tag outside of the comment forms this attribute is needed to give mkp_gravatar the email address to be encoded. Any email can be Gravatar encoded.
 
 h4. size (default: 80)
 
-1 to 512 &#8211; defines the size of the resulting gravatar, if ommited it will be 80px. All gravatars are squared.
+Defines the size of the resulting Gravatar (range: 1 to 512). All Gravatars are squared.
+
+h4. rating (default: g)
+
+Defines the rating for the Gravatar.
+
+* g: suitable for display on all websites with any audience type.
+* pg: may contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
+* r: may contain such things as harsh profanity, intense violence, nudity, or hard drug use.
+* x: may contain hardcore sexual imagery or extremely disturbing violence.
 
 h4. default (default: gravatar-logo)
 
-define which image(s) to display when no email address is available. If this attribute is missing gravatar.com&#8217;s white G on blue ground will be displayed. If you supply the url of an image here it will be used. Further it is possible to use gravatar.com&#8217;s integraton icons based on the submitted email address:
+Define which image(s) to display when an email address has no Gravatar. If this attribute is missing gravatar.com&#8217;s white G on blue ground will be displayed. If you supply the <span class="caps">URL</span>of an image here it will be used. Further it is possible to use gravatar.com&#8217;s integration icons based on the submitted email address:
 
 * 404: do not load any image if none is associated with the email hash, instead return an <span class="caps">HTTP</span> 404 (File Not Found) response
 * mm: (mystery-man) a simple, cartoon-style silhouetted outline of a person (does not vary by email hash)
@@ -36,14 +47,12 @@ define which image(s) to display when no email address is available. If this att
 * wavatar: generated faces with differing features and backgrounds
 * retro: awesome generated, 8-bit arcade-style pixelated faces
 
-h4. rating (default: g)
+h4. force (default: 0)
 
-defines the rating for the gravatar.
+* 1: always returns the gravatar in the form chosen as the default.
+* 0: returns the gravatar as normal
 
-* g: suitable for display on all websites with any audience type.
-* pg: may contain rude gestures, provocatively dressed individuals, the lesser swear words, or mild violence.
-* r: may contain such things as harsh profanity, intense violence, nudity, or hard drug use.
-* x: may contain hardcore sexual imagery or extremely disturbing violence.
+h3. Image and Related Attributes
 
 h4. image (default: 1)
 
@@ -52,30 +61,24 @@ h4. image (default: 1)
 
 h4. class (default: empty)
 
-content of the class-attribute of the image tag.
+Content of the class attribute of the image tag.
 
 h4. alt (default: empty)
 
-content of the alt-attribute of the image tag.
+Content of the alt attribute of the image tag.
 
 h2. Examples
 
-bc. <txp:glx_gravatar />;
+bc. <txp:mkp_gravatar />;
 
-bc. <txp:glx_gravatar size="60" default="http://www.example.com/images/gravatar.png" class="gravatar" />;
+bc. <txp:mkp_gravatar size="60" default="http://www.example.com/images/gravatar.png" class="gravatar" />;
 
-used in the form comments it will show the gravatar of the current commentator
+Used in the form comments it will show the Gravatar of the current commentator
 
-bc. <txp:glx_gravatar email="address@example.com"; />
+bc. <txp:mkp_gravatar email="address@example.com"; />
 
-shows the gravatar for address@example.com.
-
-bc. <txp:glx_gravatar email='<txp:gho_author_email/>'/>
-
-Shows the gravatar for the author of the current article.
+Shows the Gravatar for address@example.com.
 
 h3. Release History
 
-Version 1.0 - September 15th, 2014
-
-* Initial Release
+Version 1.0: September 15th, 2014
