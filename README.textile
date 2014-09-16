@@ -19,7 +19,12 @@ Just use &lt;txp:mkp_gravatar /&gt; where ever you need a Gravatar to be display
 
 h3. Attributes
 
-h4. email (default: empty/email address of current commentator)
+h4. secure (default: 0)
+
+* 1: returns the gravatar using SSL
+* 0: returns the gravatar using non-SSL
+
+h4. email (default: empty/email address of current commentator)</h4>
 
 Used inside a comment form the plugin will choose the current commenter's email address. If you use this tag outside of the comment forms this attribute is needed to give mkp_gravatar the email address to be encoded. Any email can be Gravatar encoded.
 
@@ -49,23 +54,40 @@ Define which image(s) to display when an email address has no Gravatar. If this 
 
 h4. force (default: 0)
 
-* 1: always returns the gravatar in the form chosen as the default.
-* 0: returns the gravatar as normal
+* 1: always returns the Gravatar in the form chosen as the default.
+* 0: returns the Gravatar as normal
+
+h4. disable (default: 0)
+
+* 1: nothing is returned
+* 0: returns the Gravatar as normal
 
 h3. Image and Related Attributes
 
 h4. image (default: 1)
 
-* 1: returns the image tag of the gravatar
-* 0: returns the url of the gravatar
+* 1: returns the image tag of the Gravatar
+* 0: returns the url of the Gravatar
+
+h4. alt (default: empty)
+
+Content of the alt attribute of the image tag.
 
 h4. class (default: empty)
 
 Content of the class attribute of the image tag.
 
-h4. alt (default: empty)
+h4. id (default: empty)
 
-Content of the alt attribute of the image tag.
+Content of the id attribute of the image tag.
+
+h4. style (default: empty)
+
+Content of the style attribute of the image tag.
+
+h4. title (default: empty)
+
+Content of the title attribute of the image tag.
 
 h2. Examples
 
@@ -81,4 +103,4 @@ Shows the Gravatar for address@example.com.
 
 h3. Release History
 
-Version 1.0: September 15th, 2014
+Version 1.0: September 16th, 2014
